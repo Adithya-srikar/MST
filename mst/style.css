@@ -1,0 +1,251 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: white;
+    background-color: black;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Navigation */
+  .navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    color: #22d3ee;
+    font-weight: 600;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #22d3ee;
+  }
+  
+  .menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Mobile Menu */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+  }
+  
+  .mobile-menu.active {
+    display: block;
+  }
+  
+  .mobile-menu-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  
+  .mobile-menu-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s;
+  }
+  
+  .mobile-menu-content a:hover {
+    color: #22d3ee;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content {
+    position: relative;
+    padding: 0 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .hero-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background-color: #22d3ee;
+    color: black;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #06b6d4;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  /* Services Section */
+  .services {
+    padding: 80px 0;
+  }
+  
+  .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  
+  .service-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 32px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .service-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .service-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .service-card p {
+    color: #a1a1aa;
+  }
+  
+  /* Contact Section */
+  .contact {
+    padding: 80px 0;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 24px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #22d3ee;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .menu-btn {
+      display: block;
+    }
+  
+    .hero-title {
+      font-size: 36px;
+    }
+  
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
