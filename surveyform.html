@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <h1>Survey Form</h1>
+            <p class="subtitle">User stories survey form</p>
+
+            <form id="surveyForm" onsubmit="return validateForm(event)">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Name">
+                    <span class="error" id="nameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter E-Mail">
+                    <span class="error" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Work Experience:</label>
+                    <input type="number" id="experience" name="experience" placeholder="Enter Number">
+                    <span class="error" id="experienceError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="comfortable">Are you comfortable in investing in real estate on platform without first investigating properly:</label>
+                    <select id="comfortable" name="comfortable">
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <span class="error" id="comfortableError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggestions">Suggestions to build trusted platform:</label>
+                    <textarea id="suggestions" name="suggestions" rows="3" placeholder="Enter your suggestions"></textarea>
+                    <span class="error" id="suggestionsError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>You are ready to invest in:</label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="investment" value="real_estate"> Real Estate
+                        </label>
+                        <label>
+                            <input type="checkbox" name="investment" value="mutual_funds"> Mutual Funds
+                        </label>
+                        <label>
+                            <input type="checkbox" name="investment" value="crypto"> Crypto Currency
+                        </label>
+                        <label>
+                            <input type="checkbox" name="investment" value="stocks"> Stocks & Bonds
+                        </label>
+                    </div>
+                    <span class="error" id="investmentError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Are you ready for further contact:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="contact" value="yes"> Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="contact" value="no"> No
+                        </label>
+                    </div>
+                    <span class="error" id="contactError"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="survey.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: white;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 4vw;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.thin {
+    display: block;
+    font-weight: 200;
+}
+
+.bold {
+    display: block;
+    font-weight: 700;
+    font-size: 6vw;
+}
+
+.subtitle {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.cta-section {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+}
+
+.play-button {
+    flex-shrink: 0;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.circle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.cta-text h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.cta-text p {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.services {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), transparent);
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .content {
+        left: 5%;
+        top: 15%;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 6vw;
+    }
+    
+    .bold {
+        font-size: 10vw;
+    }
+    
+    .cta-section {
+        left: 5%;
+        bottom: 10%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
