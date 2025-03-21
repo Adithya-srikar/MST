@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Playlist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #87CEEB; /* Sky blue background */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            width: 600px;
+            background-color: #87CEEB; /* Same as body background color */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .timestamp {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .control-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .replay-btn, .volume-btn, .arrow-btn {
+            background: none;
+            border: none;
+            color: #4682B4; /* Steel blue for buttons */
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .volume-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sound-bar {
+            -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+            appearance: none;
+            width: 100px;
+            height: 4px;
+            background-color: #B0E0E6; /* Light sky blue for sound bar background */
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .sound-bar::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            background-color: #87CEFA; /* Brighter sky blue for thumb */
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .sound-bar::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            background-color: #87CEFA;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            width: 100%; /* Ensure the header takes full width */
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1; /* Ensure header-left takes available space */
+        }
+
+        .play-pause-btn {
+            background: none;
+            border: none;
+            color: #4682B4; /* Steel blue for contrast */
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .play-bar {
+            width: 100%; /* Ensure play bar takes full width of its parent */
+            height: 6px;
+            background-color: #4682B4; /* Steel blue for better contrast */
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .progress {
+    width: 100%; /* Full progress */
+    height: 100%;
+    background-color: white;
+    border-radius: 3px;
+}
+
+        .progress-dot {
+            width: 14px;
+            height: 14px;
+            background-color: #87CEFA;
+            border: 2px solid #fff; /* White border for contrast */
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .movie-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .movie-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            border-bottom: 1px solid #B0E0E6; /* Light sky blue border */
+            font-size: 16px;
+        }
+
+        .movie-title {
+            color: #fff;
+        }
+
+        .movie-duration {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <div class="timestamp">
+                <span>01:22 / 02:46</span>
+            </div>
+            <div class="control-buttons">
+                <button class="replay-btn">🔄</button>
+                <div class="volume-container">
+                    <button class="volume-btn">🔉</button>
+                    <input type="range" min="0" max="100" value="50" class="sound-bar">
+                    <button class="volume-btn">🔊</button>
+                </div>
+                <button class="arrow-btn">⬅</button>
+                <button class="arrow-btn">➡</button>
+            </div>
+        </div>
+        <div class="header">
+            <div class="header-left">
+                <button class="play-pause-btn">⏸</button>
+                <div class="play-bar">
+                    <div class="progress">
+                        <div class="progress-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="movie-list">
+            <li class="movie-item">
+                <span class="movie-title">01. All This Is - Jo L.'s Studio</span>
+                <span class="movie-duration">2:46</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">02. The Forsaken - Broadwing Studio (Final Mix)</span>
+                <span class="movie-duration">8:30</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">03. All The King's Men - Broadwing Studio (Final Mix)</span>
+                <span class="movie-duration">5:01</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">04. The Forsaken - Broadwing Studio (First Mix)</span>
+                <span class="movie-duration">8:31</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">05. All The King's Men - Broadwing Studio (First Mix)</span>
+                <span class="movie-duration">5:05</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">06. All This Is - Alternate Cuts</span>
+                <span class="movie-duration">2:48</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">07. All The King's Men (Take 1) - Alternate Cuts</span>
+                <span class="movie-duration">5:44</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">08. All The King's Men (Take 2) - Alternate Cuts</span>
+                <span class="movie-duration">5:26</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">09. Magus - Alternate Cuts</span>
+                <span class="movie-duration">5:46</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">10. The State Of Wearing Address (Funder) - Alternate Cuts</span>
+                <span class="movie-duration">5:06</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">11. Magus - Popeye's New Year's Eve '04-'05</span>
+                <span class="movie-duration">5:46</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">12. On The Waterfront - Popeye's New Year's Eve '04-'05</span>
+                <span class="movie-duration">4:40</span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">13. Trance - Popeye's New Year's Eve '04-'05</span>
+                <span class="movie-duration">13:15</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
